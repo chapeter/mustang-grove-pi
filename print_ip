@@ -1,0 +1,38 @@
+#!/bin/sh
+# /etc/init.d/print_ip
+
+### BEGIN INIT INFO
+# Provides:          print_ip
+# Required-Start:    $remote_fs x11-common
+# Required-Stop:     $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# X-Interactive:     true
+# Short-Description: Print Hostname and IP to Grove LCD connected to I2C at boot
+# Description:       Print Hostname and IP to Grove LCD connected to I2C at boot
+### END INIT INFO
+
+USER=pi
+HOME=/home/pi
+
+export USER HOME
+
+case "$1" in
+  start)
+    echo "Printing Hostname and IP to Grove LCD Display."
+    sleep 30
+    /usr/bin/python $HOME/grove-get-ip.py
+    ;;
+
+  stop)
+    echo "Nothing to stop."
+    ;;
+
+  *)
+    echo "Usage: /etc/init.d/print_ip {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
