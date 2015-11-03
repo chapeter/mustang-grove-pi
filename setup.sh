@@ -18,6 +18,7 @@ sudo update-rc.d /etc/init.d/vncserver defaults
 tar zxC /home/pi -f vnc_files.tar.gz 
 
 #Copy startup script and enable printing of hostname and ip to Grove Pi LCD connected to I2C port
+cp ./grove-get-ip.py ~pi/
 sudo cp ./print_ip /etc/init.d/print_ip
 sudo chmod 755 /etc/init.d/print_ip
 sudo update-rc.d /etc/init.d/print_ip defaults
