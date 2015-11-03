@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 #Update the Raspbian repos
 sudo apt-get update
