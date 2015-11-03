@@ -12,7 +12,7 @@ sudo apt-get install tightvncserver
 #Copy startup script and enable vncserver
 sudo cp ./vncserver /etc/init.d/vncserver
 sudo chmod 755 /etc/init.d/vncserver
-sudo update-rc.d /etc/init.d/vncserver defaults
+sudo update-rc.d vncserver defaults
 
 #Extract vnc passwd and xstartup files into the pi user's home directory
 tar zxC /home/pi -f vnc_files.tar.gz 
@@ -21,7 +21,7 @@ tar zxC /home/pi -f vnc_files.tar.gz
 cp ./grove-get-ip.py ~pi/
 sudo cp ./print_ip /etc/init.d/print_ip
 sudo chmod 755 /etc/init.d/print_ip
-sudo update-rc.d /etc/init.d/print_ip defaults
+sudo update-rc.d print_ip defaults
 
 #Clone required projects from github to ~pi
 cd ~pi
