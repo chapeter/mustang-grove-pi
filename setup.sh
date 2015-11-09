@@ -8,7 +8,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 #Install tightvnc packages
-sudo apt-get install tightvncserver
+sudo apt-get -y install tightvncserver
 
 #Copy startup script and enable vncserver
 sudo cp ./vncserver /etc/init.d/vncserver
